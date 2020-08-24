@@ -1,0 +1,89 @@
+server:
+  port: 20000
+#  servlet:
+#    context-path: /
+#云片短信相关
+yunpian:
+  apikey: 22aae026704530a3f7a6fbe37eb26a57
+
+#zuul:
+#  prefix: /yrz
+#  strip-prefix: true
+
+#邮箱相关
+sendmail:
+  fromSend: 1172176880@qq.com
+  fromSendPassword: xfpnnerbzjkngggb
+  fromSendHost: smtp.qq.com
+
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  #    static-path-pattern: /static/**
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+  #    view:
+  #      prefix: /static/
+  #      suffix: .html
+
+  application:
+    name: yrz-web
+  datasource:
+    username: root
+    password: root
+    #    url: jdbc:mysql://localhost:3306/regeistoginforget?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/regeistoginforget?useSSL=false&characterEncoding=utf-8&serverTimezone=GMT%2B8
+
+    driver-class-name: org.gjt.mm.mysql.Driver
+  rabbitmq:
+    host: 123.57.41.80
+    port: 5672
+    username: root
+    password: root
+    virtual-host: /test
+
+  redis:
+    host: 123.57.41.80
+    port: 6379
+    password: kaname
+    database: 1
+    timeout: 200000
+
+resources:
+  static-locations: classpath:/static/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kaname:kaname@localhost:10000/eureka/
+
+#feign超时时间
+feign:
+  client:
+    default-config:
+      connectTimeout: 120000
+      readTimeout: 120000
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.itqf.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    aggressive-lazy-loading: true
+    auto-mapping-behavior: full
+
+#shiro:
+#  #  loginUrl: /jumpLogin
+#  unauthorizedUrl: /403
+#  enabled: true
+pagehelper:
+  reasonable: true

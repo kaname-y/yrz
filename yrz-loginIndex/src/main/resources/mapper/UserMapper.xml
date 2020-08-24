@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itqf.mappers.UserMapper">
+    <insert id="regeistUser" parameterType="com.itqf.entity.User" useGeneratedKeys="true"
+            keyProperty="uid" keyColumn="uid">
+        insert into user(uname,upassword,usalt)value (#{uname},#{upassword},#{usalt})
+    </insert>
+    <update id="changePassword">
+        update user set upassword = #{upassword} where uid =#{uid}
+    </update>
+
+    <select id="searchUname" resultType="com.itqf.entity.User">
+        select * from user where uname=#{uname}
+    </select>
+    <select id="searchUserByPhone" resultType="java.lang.Integer">
+        select uid from user where uphone=#{uphone}
+    </select>
+    <select id="searchUserByEmail" resultType="java.lang.Integer">
+        select uid from user where uemail=#{uemail}
+    </select>
+</mapper>

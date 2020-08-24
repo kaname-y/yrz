@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="zxx" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>优日记</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="Triple Forms Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"/>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Meta tag Keywords -->
+
+    <!-- css files -->
+    <!--    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all"/>-->
+    <!-- Style-CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!--	<link rel="stylesheet" href="css/font-awesome.min.css">-->
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+
+</head>
+
+<body>
+<div class="main-bg" id="mian">
+    <!-- title -->
+    <h1>优日记</h1>
+    <!-- //title -->
+    <div class="sub-main-w3">
+        <div class="image-style">
+
+        </div>
+        <!-- vertical tabs -->
+        <div class="vertical-tab">
+            <div id="section1" class="section-w3ls">
+                <input type="radio" name="sections" id="option1" checked>
+                <label for="option1" class="icon-left-w3pvt">
+                    <span class="fa fa-user-circle" aria-hidden="true"></span>登录</label>
+                <article>
+                    <form action="" method="post">
+                        <h3 class="legend">账号登录</h3>
+                        <div class="input">
+                            <span class="fa fa-user-o" aria-hidden="true"></span>
+                            <input type="text" v-model="logindata.uname" placeholder="用户名" name="uname" required/>
+                        </div>
+                        <div class="input">
+                            <span class="fa fa-key" aria-hidden="true"></span>
+                            <input type="password" v-model="logindata.upassword" placeholder="密码" name="upassword"
+                                   required/>
+                        </div>
+                        <button type="button" class="btn submit" @click="userLogin()">登 录</button>
+                        <a href="" class="bottom-text-w3ls"></a>
+                    </form>
+                </article>
+            </div>
+            <div id="section2" class="section-w3ls">
+                <input type="radio" name="sections" id="option2">
+                <label for="option2" class="icon-left-w3pvt">
+                    <span class="fa fa-pencil-square" aria-hidden="true"></span>注册</label>
+                <article>
+                    <form action="" method="">
+                        <h3 class="legend">注册帐户</h3>
+                        <div class="input">
+                            <span class="fa fa-user-o" aria-hidden="true"></span>
+                            <input type="text" v-on:blur="unameSearch()" v-model="registerdata.uname" placeholder="用户名"
+                                   name="uname" required/>
+                        </div>
+                        <div class="input">
+                            <span class="fa fa-key" aria-hidden="true"></span>
+                            <input id="registerdataupassword" type="password" v-model="registerdata.upassword"
+                                   placeholder="设置密码，使用英文、数字" name="upassword" required/>
+                        </div>
+                        <div class="input">
+                            <span class="fa fa-key" aria-hidden="true"></span>
+                            <input id="registerdataucpassword" type="password" v-model="registerdata.ucpassword"
+                                   placeholder="确认密码"/>
+                        </div>
+                        <button type="button" class="btn submit" @click="userRegeist()">注 册</button>
+                    </form>
+                </article>
+            </div>
+            <div id="section3" class="section-w3ls">
+                <input type="radio" name="sections" id="option3">
+                <label for="option3" class="icon-left-w3pvt">
+                    <span class="fa fa-lock" aria-hidden="true"></span>忘记密码?</label>
+                <article>
+                    <form action="" method="">
+                        <h3 class="legend last">重置密码</h3>
+
+                        <div class="input">
+                            <span class="fa fa-user-o" aria-hidden="true"></span>
+                            <input type="text" v-model="forgetdata.findway" placeholder="请输入绑定的手机号或者邮箱" name="findway"
+                                   required/>
+                        </div>
+
+                        <div id="container" class="input">
+                            <input type="text" v-model="forgetdata.checknum" placeholder="输入验证码" name="checknum">
+
+                            <!--                            <span v-show="forgetdata.sendAuthCode" class="auth_text auth_text_blue"-->
+                            <!--                                  @click="getAuthCode">获取验证码</span>-->
+                            <!--                            <span v-show="!forgetdata.sendAuthCode" class="auth_text">-->
+                            <!--                                <span class="auth_text_blue">{{auth_time}} </span> 秒后重新发送验证码</span>-->
+
+                            <button type="button" class="get_num " v-bind:class="{gray:wait_timer>0}"
+                                    @click.na='getMobileCode()'>{{ getMobileCodeText() }}
+                            </button>
+                        </div>
+
+                        <div class="input">
+                            <span class="fa fa-key" aria-hidden="true"></span>
+                            <input id="forgetdataupassword" type="password" v-model="forgetdata.upassword"
+                                   placeholder="请输入新密码" name="upassword" required/>
+                        </div>
+                        <div class="input">
+                            <span class="fa fa-key" aria-hidden="true"></span>
+                            <input id="forgetdataucpassword" type="password" v-model="forgetdata.ucpassword"
+                                   placeholder="确认密码" required/>
+                        </div>
+
+
+                        <button type="button" class="btn submit last-btn" @click="userForget()">提交</button>
+                    </form>
+                </article>
+            </div>
+        </div>
+        <!-- //vertical tabs -->
+        <div class="clear"></div>
+    </div>
+    <!-- copyright -->
+    <div class="copyright">
+        <h2>Test &copy; 2019 - {{nowYear}} 版权所有| by
+            <a href="#">Kaname</a>
+        </h2>
+    </div>
+    <!-- //copyright -->
+</div>
+
+</body>
+<!-- script   -->
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://www.jq22.com/jquery/vue.min.js"></script>
+<!-- JavaScript 代码需要放在尾部（指定的HTML元素之后） -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+<script src="js/index.js"></script>
+
+</html>

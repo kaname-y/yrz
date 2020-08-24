@@ -1,0 +1,47 @@
+server:
+  port: 11000
+
+spring:
+  application:
+    name: yrz-cache
+  datasource:
+    username: root
+    password: root
+#    url: jdbc:mysql://localhost:3306/regeistoginforget?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/regeistoginforget?useSSL=false&characterEncoding=utf-8&serverTimezone=GMT%2B8
+
+    driver-class-name: org.gjt.mm.mysql.Driver
+
+
+  redis:
+    host: 123.57.41.80
+    port: 6379
+    password: kaname
+    database: 1
+    timeout: 200000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kaname:kaname@localhost:10000/eureka/
+
+
+#feign超时时间
+#feign:
+#  client:
+#    default-config:
+#      connectTimeout: 120000
+#      readTimeout: 120000
+
+#ribbon:
+#  ReadTimeout: 120000
+#  ConnectTimeout: 120000
+
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.itqf.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    aggressive-lazy-loading: true
+    auto-mapping-behavior: full

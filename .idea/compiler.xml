@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="yrz-eureka" />
+        <module name="yrz-search" />
+        <module name="yrz-cache" />
+        <module name="yrz-loginIndex" />
+        <module name="yrz-common" />
+        <module name="yrz-web" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="regeist-login-forget" options="-parameters" />
+      <module name="yrz-cache" options="-parameters" />
+      <module name="yrz-common" options="-parameters" />
+      <module name="yrz-eureka" options="-parameters" />
+      <module name="yrz-loginIndex" options="-parameters" />
+      <module name="yrz-search" options="-parameters" />
+      <module name="yrz-web" options="-parameters" />
+    </option>
+  </component>
+</project>
